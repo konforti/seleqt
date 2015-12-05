@@ -26,6 +26,7 @@ seleqt.forEach(function(el, idx, array) {
 
   var li = [].slice.call(el.querySelectorAll('ul li'));
   li.forEach(function(el, idx, array) {
+    el.className = 'seleqt-option';
     el.style.cursor = 'pointer';
   });
 
@@ -48,14 +49,11 @@ document.addEventListener('click', function(e) {
     })
   }
 
-  if (el.parentElement) {
-    var wrp = el.parentElement.parentElement;
+  if(el.className === 'seleqt-option') {
+    var wrp = el.closest('.seleqt');
     if (wrp) {
-      var text = wrp.querySelector('.seleqt-text-field');
-      if (wrp.className === 'seleqt') {
-        text.value = el.innerHTML;
-        hidden.value = el.getAttribute('data-value') || el.innerHTML;
-      }
+      wrp.querySelector('.seleqt-text-field').value = el.getAttribute('data-text') ||el.innerHTML;
+      wrp.querySelector('.seleqt-hidden-field').value = el.getAttribute('data-value') || el.innerHTML;;
     }
   }
 });
