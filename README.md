@@ -8,11 +8,11 @@ Select element substitute
 ```
 
 ```js
-<div class="seleqt">
+<div class="seleqt" data-name="name-to-be-submitted">
   <ul>
-    <li data-key="0" data-val="some-text" data-text="Some HTML">Some HTML</li>
-    <li data-key="1" data-val="more-text" data-text="Somthing...">More HTML</li>
-    <li data-key="2" data-val="some-image" data-text="Description">Some image</li>
+    <li data-value="some-text">Some HTML</li>
+    <li data-value="more-text">More HTML</li>
+    <li data-value="some-image">Some image</li>
   </ul>
 </div>
 ```
